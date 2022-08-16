@@ -32,6 +32,12 @@ function appendContent(path,content){
       console.log("content appended successfully");
    })
 }
+function List(dir){
+   let arr=fs.readdirSync(dir)
+   arr.forEach((e,index)=>{
+      console.log(index,e);
+   })
+}
 const process=require("process");
 const cmd=process.argv;
 
@@ -57,7 +63,7 @@ else if(cmd[2]==="create"){
    appendContent(cmd[3],cmd[4]);
  }
  else if(cmd[2]==="list"){
-    console.log(read());
+    List(cmd[3]);
  }
  
 
